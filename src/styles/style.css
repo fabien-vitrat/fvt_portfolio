@@ -1,0 +1,83 @@
+/* Google Fonts */
+/* Importation de la police Jost (Regular 400 / Medium 500 / Bold 700) */
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+/* Importation de la police IM Fell English SC (Regular 400) */
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap');
+
+
+.section-title{
+  text-align: center;
+  margin: 0px ;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;}
+  .section-title h2 {
+    font-weight: 700;
+    color: var(--ff-jost);
+    margin: 0px;
+    position: absolute;}
+  .section-title h1{
+    color: var(--back);
+    font-family: var(--ff-jockey);
+    font-weight: bold;
+    margin: 0px;}
+
+
+    
+/* RESPONSIVE */
+
+/* Reponsive pour max 768px */
+@media (max-width: 768px) {
+  .container {
+    max-width: 540px;
+    width: 100%;
+    margin-inline: auto; }
+    .section-title h2 {
+      font-size: 9vw;}
+    .section-title h1{
+      font-size: 13vw;
+      position: absolute;
+      white-space: nowrap;}
+}
+
+/* Responsive pour 768 px */
+@media (min-width: 768px) {
+  .container { max-width: 720px; width: 100%; margin-inline: auto;}
+  .section-title h2 {
+    font-size: 5vw;}
+  .section-title h1{
+    font-size: 9vw;}
+}
+
+/* Responsive pour 992px */  
+@media (min-width: 992px) {
+  .container { max-width: 960px; }
+  .section-title h2 {
+    font-size: 3vw;}
+  .section-title h1{
+    font-size: 6.5vw;}
+}
+  
+/* Responsive pour 1200 px */  
+@media (min-width: 1200px) {
+  .container { max-width: 1140px; }
+  .section-title h2 {
+    font-size: 2.8vw;}
+  .section-title h1{
+    font-size: 7vw;}
+}
+
+/* Responsive pour 1400px */
+@media (min-width: 1400px) {
+  .container { max-width: 1320px; }
+  .section-title h2 {
+    font-size: 2.5vw;}
+  .section-title h1{
+    font-size: 5vw;}
+}
+
+
+
+

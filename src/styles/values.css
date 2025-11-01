@@ -1,0 +1,113 @@
+
+.valeurs {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;}
+
+    .valeurs .valeur,
+    .valeurs .description {
+        max-width: 90%;}
+        .valeurs .valeur h2 {
+            white-space: nowrap;}
+        .valeurs .gauche,
+        .valeurs .droite {
+            margin: 50px 0;}
+            .valeurs .derniere {
+                margin: 0;}
+    
+    
+
+.valeurs .all {
+    display: contents;}
+.valeurs .gauche .valeur{
+    display: flex;
+    justify-content: flex-end;
+    align-items: stretch;}
+.valeurs .droite .valeur{
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;}
+.valeurs .gauche .description{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;}
+.valeurs .droite .description {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;}
+
+    .valeurs .valeur .fond{
+        padding: 15px 30px;
+        border-radius: 50px;
+        display: flex;
+        align-items: center;
+        box-shadow: 0 0 20em -10px;}
+        .valeurs .valeur .fond i {
+            border-radius: 50px;
+            padding-right: 10px;
+            font-size: 20px;
+            padding-top: 2px;}
+        .valeurs .valeur .fond h2 {
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: bolder;}
+    .valeurs .description p{
+        margin: 0;
+        padding: 0;
+    }
+
+.citation {
+    border-radius: 5px;
+    width: 36rem;
+    padding: 10px;
+    box-shadow: 0 0 20em -30px;
+    margin: 0 auto;
+}
+.citation p {
+    margin: 0;
+}
+.citation .auteur {
+    font-style: italic;
+    text-align: end;}
+
+@media (max-width: 767px) {
+    .valeurs .gauche,
+    .valeurs .droite {
+        margin: 0px 0;}
+        .valeurs .derniere {
+            margin: 0;}
+    .valeurs .valeur .fond h2 {
+        font-size: 1.3rem;}
+        .valeurs .valeur .fond i {
+            font-size: 20px;}
+    .valeurs .gauche {
+        display: flex;
+        flex-direction: column;
+        align-items: center;}
+        .valeurs .gauche .valeur {
+            display: flex;
+            justify-content: center;
+            margin: 0 0 7px 0;}
+        .valeurs .gauche .description {
+            display: flex;
+            align-items: center;}
+    .valeurs .droite {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;}
+        .valeurs .droite .valeur {
+            display: flex;
+            justify-content: center;
+            margin: 0 0 7px 0;}
+        .valeurs .droite .description {
+            display: flex;
+            align-items: center;}
+    .citation {
+        width: 20rem;
+        text-align: center;}
+}
+
+

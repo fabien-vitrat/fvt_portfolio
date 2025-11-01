@@ -1,0 +1,79 @@
+.goals {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;}
+
+    .goals .row {
+        justify-content: center; }
+
+    .goals .goal {
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px; }
+        .goals .goal .goal-item {
+            border-radius: 10px;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            display: flex;
+            box-shadow: 0 0 40em -40px;
+            padding: 0;
+            margin: 0; }
+
+            .goals .goal .goal-item .image-container {
+                position: relative;
+                width: 150px;
+                height: 100px;
+                overflow: hidden;
+                border-radius: 10px 0 0 10px; }
+                .goals .goal .goal-item .image-container .img-fluid {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    display: block; }
+                .goals .goal .goal-item .image-container .overlay {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: rgba(0,0,0,0.6);
+                    color: white;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-weight: bold;
+                    font-size: 1.2rem;
+                    opacity: 0;
+                    transition: opacity 0.3s ease;
+                    border-radius: 10px 0 0 10px; }
+                .goals .goal .goal-item:hover .image-container .overlay {
+                    opacity: 1; }
+
+            .goals .goal .goal-item .goal-text {
+                padding: 0 30px 0 0;
+                flex: 1; }
+                .goals .goal .goal-item .goal-text p {
+                    margin: 0; }
+
+
+@media (max-width: 768px) {
+    .goals .goal {
+        margin-top: 30px; }
+    .goals .goal .goal-item {
+        gap: 10px;
+        box-shadow: 0 0 9em -50px;
+        flex-direction: column; } 
+    .goals .goal .goal-item .image-container {
+        width: 100%;
+        height: 70px;
+        border-radius: 10px 10px 0 0; }
+        .goals .goal .goal-item .image-container .overlay {
+            border-radius: 10px 10px 0 0;
+            opacity: 1; }
+    .goals .goal .goal-item .goal-text {
+        text-align: center;
+        padding: 0 5px 5px; } }   

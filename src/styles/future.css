@@ -1,0 +1,31 @@
+.future{
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    margin: 50px 0;}
+    .future .row {
+        padding: 20px;}
+    .future .histoire {
+        padding: 20px;
+        display: flex;
+        justify-content: space-evenly;
+        text-align: justify;}
+    .future .stage {
+        padding: 20px;}
+    .future .stage h5 {
+        font-weight: bold;
+        padding-bottom: 10px;}
+    .future .stage .infos {
+        margin-top: 20px;}
+        .future .stage .infos p {
+            margin: 20px 5px;
+            border-radius: 25px;
+            padding: 8px 16px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+            transition: all 0.3s ease;
+            cursor: pointer;}
+            .future .stage .infos p:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);}

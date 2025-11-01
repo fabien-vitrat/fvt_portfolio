@@ -1,0 +1,191 @@
+.contact{
+    display: flex;
+    align-items: center;
+    height: 100vh;}
+    .contact .row {
+        display: flex;
+        flex-direction: row-reverse;
+        width: 100%;
+        align-items: center}
+
+/* Contact Section */
+.contact-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  margin-top: 3rem;
+  align-items: start;
+}
+
+.contact {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  padding: 0;
+}
+
+.contact .contact-row {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* --- Colonne de gauche (Contenu) --- */
+.contact-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 50px;
+}
+
+/* Titre stylisé avec le grand texte derrière */
+.contact-title-container {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+/* ASSURE QUE LE TITRE RESTE SUR UNE SEULE LIGNE */
+.contact-content .background-title {
+  position: absolute;
+  top: -25px;
+  left: 0;
+  font-size: 4rem;
+  font-weight: 800;
+  color: #f3f4f6;
+  z-index: 1;
+  letter-spacing: 0.3rem;
+  /* Nouveau : empêche le retour à la ligne */
+  white-space: nowrap; 
+}
+
+.contact-content .main-title {
+  position: relative;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #1f2937;
+  z-index: 2;
+  margin: 0;
+}
+
+/* Liste de contact */
+.contact-list {
+  list-style: none;
+  padding: 0;
+}
+
+.contact-item {
+  display: flex;
+  align-items: baseline;
+  margin: 15px 0;
+  padding: 5px 0;
+  transition: all 0.3s ease;
+}
+
+/* Labels un peu plus gros */
+.contact-item .contact-label {
+  font-weight: 700;
+  color: #1f2937;
+  width: 120px;
+  margin-right: 20px;
+  letter-spacing: 0.1rem;
+  /* Nouveau : Taille de police légèrement augmentée */
+  font-size: 1.1em; 
+}
+
+/* Style des liens */
+.contact-item a {
+  color: #4b5563;
+  font-weight: 400;
+  word-break: break-all;
+  text-decoration: none; /* Enlève le soulignement par défaut */
+  transition: color 0.3s ease;
+}
+
+.contact-item a:hover {
+    color: #1f2937; /* Changement de couleur au survol */
+}
+
+/* --- Colonne de droite (Iframe de la carte) --- */
+.contact-img {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 50px;
+}
+
+/* Conteneur Responsif pour l'iframe */
+.map-iframe-container {
+  width: 100%;
+  /* Aspect ratio 4:3 (450/600 = 0.75) */
+  padding-bottom: 75%;
+  height: 0;
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.responsive-map-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0 !important;
+  border-radius: 10px;
+}
+
+
+/* --- Gestion Mobile (Media Query) --- */
+@media (max-width: 992px) {
+    /* La carte passe sous les infos grâce à flex-direction: column-reverse; */
+  .contact {
+    height: auto;
+    padding: 50px 15px;
+  }
+
+  .contact .contact-row {
+    flex-direction: column-reverse; 
+  }
+
+  .contact-content {
+    padding-left: 15px;
+    padding-top: 30px;
+  }
+
+  .contact-img {
+    padding-right: 15px;
+    margin-bottom: 30px;
+    justify-content: center;
+  }
+
+  .contact-content .background-title {
+    font-size: 3rem;
+    top: -15px;
+    /* white-space: nowrap est déjà appliqué et efficace */
+  }
+
+  .contact-content .main-title {
+    font-size: 2rem;
+  }
+
+  .contact-item {
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 10px 0;
+  }
+
+  .contact-item .contact-label {
+    width: auto;
+    margin-bottom: 3px;
+    font-size: 1em; /* Ajustement de la taille de police en mobile */
+  }
+
+  /* Ajustement de la taille de la carte en mobile */
+  .map-iframe-container {
+    padding-bottom: 90%;
+    max-width: 90%;
+    margin: 0 auto;
+  }
+}
