@@ -1,16 +1,17 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useTranslation } from '@/src/hooks/useTranslation';
 
 export default function Contact() {
-    const { t } = useTranslation();
-
+    // Les informations de contact avec des valeurs réelles
     const contactInfo = [
-        { label: t.contact.email, value: 'vitratfabien@gmail.com', href: 'mailto:vitratfabien@gmail.com' },
-        { label: t.contact.linkedin, value: 'Fabien VITRAT', href: 'https://linkedin.com/in/fabien-vitrat' },
-        { label: t.contact.github, value: 'Fabien VITRAT', href: 'https://github.com/FabienVitrat' },
-        { label: t.contact.city, value: t.contact.cityValue, href: null },
+        // Utilisation de mailto: pour l'email
+        { label: 'E-MAIL', value: 'vitratfabien@gmail.com', href: 'mailto:vitratfabien@gmail.com' },
+        // Liens vers vos profils (à ajuster avec les vrais liens si possible)
+        { label: 'LINKEDIN', value: 'Fabien VITRAT', href: 'https://linkedin.com/in/fabien-vitrat' }, 
+        { label: 'GIT-HUB', value: 'Fabien VITRAT', href: 'https://github.com/FabienVitrat' }, 
+        // Ville simple, pas de lien
+        { label: 'VILLE', value: 'Marseille', href: null }, 
     ];
 
     const containerVariants = {
@@ -64,14 +65,14 @@ export default function Contact() {
                         whileInView="visible"
                         viewport={{ once: true }}
                     >
-                        <motion.div
+                        <motion.div 
                             className="section-title"
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                         >
                             <h1>Fabien VITRAT</h1>
-                            <h2>{t.contact.title}</h2>
+                            <h2>CONTACT</h2>
                         </motion.div>
 
                         <ul className="contact-list">

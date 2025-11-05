@@ -12,9 +12,7 @@ import "@/src/styles/goals.css";
 import "@/src/styles/course.css";
 import "@/src/styles/contact.css";
 import "@/src/styles/future.css";
-import "@/src/styles/navigation.css";
-
-import { LanguageProvider } from "@/src/contexts/LanguageContext";
+import "@/src/styles/navigation.css"
 
 
 const geistSans = Geist({
@@ -53,9 +51,7 @@ export default function RootLayout({
       </head>
 
       <body className="light_theme">
-        <LanguageProvider>
-          {children}
-        </LanguageProvider>
+        {children}
       </body>
     </html>
   );

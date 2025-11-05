@@ -2,14 +2,11 @@
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useLanguage } from '@/src/contexts/LanguageContext';
-import { useTranslation } from '@/src/hooks/useTranslation';
 
 export default function Navigation() {
   const [activeSection, setActiveSection] = useState('welcome');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { language, setLanguage } = useLanguage();
-  const { t } = useTranslation();
+  const [language, setLanguage] = useState<'fr' | 'en' | 'es'>('fr');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -50,14 +47,14 @@ export default function Navigation() {
   };
 
   const navItems = [
-    { id: 'accueil', label: t.nav.home },
-    { id: 'about', label: t.nav.about },
-    { id: 'valeurs', label: t.nav.values },
-    { id: 'future', label: t.nav.search },
-    { id: 'goals', label: t.nav.goals },
-    { id: 'course', label: t.nav.course },
-    { id: '#', label: t.nav.skills },
-    { id: 'contact', label: t.nav.contact },
+    { id: 'accueil', label: { fr: 'Accueil', en: 'Home', es: 'Inicio' } },
+    { id: 'about', label: { fr: 'À propos', en: 'About', es: 'Sobre mí' } },
+    { id: 'valeurs', label: { fr: 'Valeurs', en: 'Values', es: 'Valores' } },
+    { id: 'future', label: { fr: 'Recherche', en: 'Recherche', es: 'Recherche' } },
+    { id: 'goals', label: { fr: 'Objectifs', en: 'Objectifs', es: 'Objectifs' } },
+    { id: 'course', label: { fr: 'Parcours', en: 'Parcours', es: 'Parcours' } },
+    { id: '#', label: { fr: 'Compétences', en: 'Compétences', es: 'Compétences' } },
+    { id: 'contact', label: { fr: 'Contact', en: 'Contact', es: 'Contact' } },
   ];
 
   return (
@@ -107,7 +104,7 @@ export default function Navigation() {
                     transition={{ delay: index * 0.1 }}
                     className={`menu-title ${activeSection === item.id ? 'active' : ''}`}
                   >
-                    {item.label}
+                    {item.label[language]}
                   </motion.h1>
                 ))}
               </div>
@@ -117,7 +114,11 @@ export default function Navigation() {
                 download
                 className="menu-cv"
               >
-                {t.nav.downloadCV}
+                {language === 'fr'
+                  ? 'Télécharger mon CV'
+                  : language === 'en'
+                  ? 'Download my CV'
+                  : 'Descargar mi CV'}
               </motion.a>
 
               <div className="menu-lang">
@@ -127,13 +128,13 @@ export default function Navigation() {
                     onClick={() => setLanguage(lang as 'fr' | 'en' | 'es')}
                     className={`lang-button ${language === lang ? 'active' : ''}`}
                   >
-                    {lang === 'fr' ? t.nav.french : lang === 'en' ? t.nav.english : t.nav.spanish}
+                    {lang === 'fr' ? 'Français' : lang === 'en' ? 'English' : 'Español'}
                   </button>
                 ))}
               </div>
 
               <div className="menu-footer">
-                {t.nav.copyright}
+                © 2025 Fabien VITRAT. Tous droits réservés.
               </div>
             </div>
           </motion.div>

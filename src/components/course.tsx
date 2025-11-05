@@ -2,10 +2,8 @@
 
 import { experiences } from '../data/parcoursProAca';
 import { motion } from 'framer-motion';
-import { useTranslation } from '@/src/hooks/useTranslation';
 
 export default function Course() {
-const { t } = useTranslation();
 const containerVariants = {
         hidden: { opacity: 0 },
         visible: {
@@ -27,14 +25,14 @@ const containerVariants = {
         <section className="course">
             <div className="container">
                 {/* Le titre reste fixe en haut */}
-                <motion.div
+                <motion.div 
                     className="section-title"
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                 >
                     <h1>Fabien VITRAT</h1>
-                    <h2>{t.course.title}</h2>
+                    <h2>MON PARCOURS</h2>
                 </motion.div>
 
                 {/* Le nouveau conteneur pour le défilement */}
