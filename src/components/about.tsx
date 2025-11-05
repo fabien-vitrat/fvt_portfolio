@@ -3,8 +3,11 @@
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import Portrait from '@/src/public/portrait.jpeg';
+import { useTranslation } from '@/src/hooks/useTranslation';
 
 export default function About() {
+    const { t } = useTranslation();
+
     const containerVariants = {
         hidden: { opacity: 0 },
         visible: {
@@ -20,7 +23,13 @@ export default function About() {
         visible: { opacity: 1, y: 0 }
     };
 
-    const passions = ['SPORT', 'AUTOMOBILE', 'PHOTOGRAPHIE', 'VOYAGE', 'INFORMATIQUE'];
+    const passions = [
+        t.about.passions.sport,
+        t.about.passions.automobile,
+        t.about.passions.photography,
+        t.about.passions.travel,
+        t.about.passions.it
+    ];
 
     return (
         <section className='about' data-aos="fade-up">
@@ -33,14 +42,14 @@ export default function About() {
                         whileInView="visible"
                         viewport={{ once: true }}
                     >
-                        <motion.div 
+                        <motion.div
                             className="section-title"
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                         >
                             <h1>Fabien VITRAT</h1>
-                            <h2>A PROPOS</h2>
+                            <h2>{t.about.title}</h2>
                         </motion.div>
                         
                         <motion.div className="row info" variants={itemVariants}>
@@ -59,40 +68,40 @@ export default function About() {
                             <div className="col-lg-6">
                                 <ul>
                                     <motion.li whileHover={{ x: 5 }}>
-                                        <strong>Date de naissance :</strong> <span>1 mai 2007</span>
+                                        <strong>{t.about.birthDate}</strong> <span>{t.about.birthDateValue}</span>
                                     </motion.li>
                                     <motion.li whileHover={{ x: 5 }}>
-                                        <strong>Email :</strong> <span>vitratfabien@gmail.com</span>
+                                        <strong>{t.about.email}</strong> <span>vitratfabien@gmail.com</span>
                                     </motion.li>
                                     <motion.li whileHover={{ x: 5 }}>
-                                        <strong>Téléphone :</strong> <span>+33 7 66 18 07 15</span>
+                                        <strong>{t.about.phone}</strong> <span>+33 7 66 18 07 15</span>
                                     </motion.li>
                                     <motion.li whileHover={{ x: 5 }}>
-                                        <strong>Ville :</strong> <span>Marseille, France</span>
+                                        <strong>{t.about.city}</strong> <span>{t.about.cityValue}</span>
                                     </motion.li>
                                 </ul>
                             </div>
-                                                        
+
                             <div className="col-lg-6">
                                 <ul>
                                     <motion.li whileHover={{ x: 5 }}>
-                                        <strong>Age :</strong> <span>18 ans</span>
+                                        <strong>{t.about.age}</strong> <span>{t.about.ageValue}</span>
                                     </motion.li>
                                     <motion.li whileHover={{ x: 5 }}>
-                                        <strong>Etablissement :</strong> <span>ESTACA</span>
+                                        <strong>{t.about.school}</strong> <span>{t.about.schoolValue}</span>
                                     </motion.li>
                                     <motion.li whileHover={{ x: 5 }}>
-                                        <strong>Niveau :</strong> <span>Première année</span>
+                                        <strong>{t.about.level}</strong> <span>{t.about.levelValue}</span>
                                     </motion.li>
                                     <motion.li whileHover={{ x: 5 }}>
-                                        <strong>Langues :</strong> <span>Français, Espagnol, Anglais</span>
+                                        <strong>{t.about.languages}</strong> <span>{t.about.languagesValue}</span>
                                     </motion.li>
                                 </ul>
                             </div>
                         </motion.div>
                         
                         <motion.div variants={itemVariants}>
-                            <p>Toujours à la recherche de nouvelles opportunités pour apprendre et évoluer, je m&apos;investis avec passion dans des projets variés. Curieux et déterminé, je m&apos;efforce de mêler rigueur, créativité et esprit d&apos;équipe pour relever chaque défi avec enthousiasme. À travers ce portfolio, je vous invite à plonger dans mon univers, façonné par mes passions, mes aspirations et mon ambition.</p>
+                            <p>{t.about.description}</p>
                         </motion.div>
                         
                         <motion.div className='passions' variants={itemVariants}>
