@@ -6,43 +6,45 @@ import Ingenieur from '@/src/public/ingenieur.jpg';
 import Passions from '@/src/public/passions.jpg';
 import Etudes from '@/src/public/etudes.jpg';
 import Experiences from '@/src/public/voyage.jpg';
-
-const valeurs = [
-  {
-    titre: 'ÉTUDES',
-    image: Etudes,
-    textes: [
-      "Intégrer une classe préparatoire scientifique",
-      'Réaliser le concours des grandes écoles d\'ingénieurs'
-    ]
-  },
-  {
-    titre: "INGÉNIEUR",
-    image: Ingenieur,
-    textes: [
-      'Contribuer des solutions innovantes',
-      'Obtenir un diplôme d\'ingénieur'
-    ]
-  },
-  {
-    titre: 'PASSIONS',
-    image: Passions,
-    textes: [
-      'Jeux vidéo, sport, photographie et voyages',
-      'Apprendre de nouvelles choses et m\'épanouir'
-    ]
-  },
-  {
-    titre: 'EXPÉRIENCES',
-    image: Experiences,
-    textes: [
-      'Explorer le monde',
-      "Ressentir l'adrénaline",
-    ]
-  }
-];
+import { useTranslation } from '@/src/hooks/useTranslation';
 
 export default function Goals() {
+  const { t } = useTranslation();
+
+  const valeurs = [
+    {
+      titre: t.goals.studies.title,
+      image: Etudes,
+      textes: [
+        t.goals.studies.text1,
+        t.goals.studies.text2
+      ]
+    },
+    {
+      titre: t.goals.engineer.title,
+      image: Ingenieur,
+      textes: [
+        t.goals.engineer.text1,
+        t.goals.engineer.text2
+      ]
+    },
+    {
+      titre: t.goals.passions.title,
+      image: Passions,
+      textes: [
+        t.goals.passions.text1,
+        t.goals.passions.text2
+      ]
+    },
+    {
+      titre: t.goals.experiences.title,
+      image: Experiences,
+      textes: [
+        t.goals.experiences.text1,
+        t.goals.experiences.text2
+      ]
+    }
+  ];
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -61,14 +63,14 @@ export default function Goals() {
   return (
     <section className="goals" data-aos="fade-up">
         <div className="container">
-            <motion.div 
+            <motion.div
               className="section-title"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
               <h1>Fabien VITRAT</h1>
-              <h2>MES OBJECTIFS</h2>
+              <h2>{t.goals.title}</h2>
             </motion.div>
             
             <div className="row">
