@@ -1,0 +1,209 @@
+/* --- Section "Parcours" --- */
+
+
+/* --- CONTENEUR PRINCIPAL --- */
+.course {
+    min-height: 100vh; 
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    padding: 80px 0;
+}
+
+
+/* --- STRUCTURE DE LA FRISE --- */
+
+/* Conteneur pour la frise (la 'row') */
+.course .parcours {
+    margin-top: 40px; 
+    width: 100%;
+    padding: 1em 0;
+    position: relative; 
+}
+/* "Clearfix" : s'assure que le conteneur englobe les éléments flottants (pour desktop) */
+.parcours:after {
+    content: "";
+    display: table;
+    clear: both; 
+}
+/* La ligne centrale verticale (pour mobile) */
+.parcours:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 18px; 
+    height: 100%;
+    width: 4px;
+    background: #2563eb; 
+    background: linear-gradient(180deg, #2563eb 80%, rgba(37, 99, 235, 0.2) 100%);
+}
+
+/* Bloc pour une seule expérience (un item de la frise) */
+.parcours-experience {
+    position: relative; 
+    margin: 1.5em 0; 
+}
+.parcours-experience:after {
+    content: "";
+    display: table;
+    clear: both; 
+}
+.parcours-experience:first-child { margin-top: 0; } 
+.parcours-experience:last-child { margin-bottom: 0; } 
+
+        
+/* Icône (le "point" sur la ligne) */
+.parcours-icon {
+    position: absolute;
+    top: 15px; 
+    left: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #fff;
+    border: 3px solid #2563eb; 
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    box-shadow: 0 0 10px rgba(37, 99, 235, 0.3); 
+    z-index: 1; 
+}
+.parcours-icon i {
+    color: #2563eb !important; 
+    font-size: 110%; 
+}
+
+
+/* Carte d'information (le bloc de texte) */
+.parcours-infos {
+    position: relative; 
+    margin-left: 60px; 
+    border-radius: 20px; 
+    padding: 1.5em;
+    background: #fff; 
+    color: #292929;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05); 
+}
+.parcours-infos:after {
+    content: "";
+    display: table;
+    clear: both; 
+}
+
+/* La flèche (le "triangle") */
+.parcours-fleche {
+    content: "";
+    position: absolute;
+    top: 13px; 
+    right: 100%; 
+    height: 0;
+    width: 0;
+    border: 7px solid transparent;
+    border-right: 10px solid #fff; 
+    filter: drop-shadow(-2px 1px 1px rgba(0,0,0,0.03)); 
+}
+
+
+/* --- STYLES DU TEXTE DANS LA CARTE --- */
+
+/* Style de la date (placée en haut de la carte) */
+.parcours-infos .parcours-date {
+    opacity: 1;
+}
+.parcours-infos .parcours-date p {
+    padding: 0;
+    margin: 0;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #2563eb; 
+    margin-bottom: 5px; 
+}
+
+/* Titre (Diplôme ou Poste) */
+.parcours-infos .ecole-entreprise {
+    color: #1f2937;
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin: 0;
+}
+/* Sous-titre (Ecole ou Entreprise) */
+.parcours-infos .diplome-entreprise {
+    padding: 0;
+    margin: 0;
+    padding-top: 5px;
+    color: #4b5563;
+}
+/* Mention ou Lieu */
+.parcours-infos .lieu-mention {
+    font-style: italic;
+    padding-top: 3px;
+    margin-bottom: 0;
+    font-size: 0.9rem;
+    color: #6b7280;
+}
+    
+
+/* --- RESPONSIVE (Desktop) --- */
+@media (max-width: 992px) {
+    .parcours {
+        height: auto;
+        padding: 80px 10px;
+    }
+}
+/* S'applique quand l'écran est PLUS GRAND que 992px */
+@media only screen and (min-width: 992px) {
+    /* La ligne centrale se déplace au milieu de l'écran */
+    .parcours:before {
+        left: 50%;
+        margin-left: -2px; 
+    }
+    /* Augmente l'espace vertical entre les expériences */
+    .parcours-experience {
+        margin: 2em 0; 
+    }
+         
+    /* L'icône se déplace au milieu */
+    .parcours-colonnes .parcours-icon {
+        width: 50px;
+        height: 50px;
+        left: 50%;
+        margin-left: -25px; 
+        top: 0; 
+    }
+    /* Les cartes prennent 45% de la largeur (laisse 10% au milieu) */
+    .parcours-colonnes .parcours-infos {
+        margin-left: 0;
+        padding: 1.5em;
+        width: 45%; 
+    }
+    
+    /* La date reste en haut (ne change pas de position) */
+    .parcours-colonnes .parcours-infos .parcours-date {
+        position: static;
+        width: auto;
+    }
+
+    /* Flèche pour la carte de GAUCHE */
+    .parcours-colonnes .parcours-fleche {
+        top: 18px; 
+        left: 100%;
+        transform: rotate(180deg); 
+    }
+    
+    /* --- Styles pour la carte de DROITE (alternance 'even') --- */
+    .parcours-colonnes .parcours-experience:nth-child(even) .parcours-infos {
+        float: right; 
+    }
+    .parcours-colonnes .parcours-experience:nth-child(even) .parcours-fleche {
+        left: auto; 
+        right: 100%; 
+        transform: rotate(0); 
+    }
+    
+    /* Style de la date pour la carte de droite */
+    .parcours-colonnes .parcours-experience:nth-child(even) .parcours-infos .parcours-date {
+        left: auto;
+        right: auto;
+        text-align: left; 
+    }
+}

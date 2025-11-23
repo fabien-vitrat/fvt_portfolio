@@ -1,0 +1,68 @@
+/* --- Section "Footer" --- */
+
+
+/* --- CONTENEUR PRINCIPAL --- */
+.footer {
+    background-color: var(--color-light);
+    color: var(--color-back); 
+    padding: 30px 0; 
+}
+
+/* Conteneur du contenu (dans le .container global) */
+.footer-content {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+}
+
+
+/* --- ÉLÉMENTS DU FOOTER --- */
+
+/* Conteneur des icônes de réseaux sociaux */
+.social-links {
+    display: flex; 
+    gap: 25px; 
+    margin-bottom: 15px; 
+}
+
+/* Style pour chaque lien <a> d'icône */
+.social-links a {
+    color: #a0aec0; 
+    font-size: 1.8rem; 
+    transition: all 0.3s ease; 
+}
+
+/* Effet au survol */
+.social-links a:hover {
+    color: var(--color-accent); 
+    transform: translateY(-3px); 
+}
+
+/* Style du texte de copyright */
+.copyright {
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+
+/* --- RESPONSIVE (Tablette et plus) --- */
+/* S'applique quand l'écran est PLUS GRAND que 768px */
+@media (min-width: 768px) {
+    /* Le contenu passe en ligne horizontale */
+    .footer-content {
+        flex-direction: row;
+        justify-content: space-between; 
+    }
+
+    /* Bloc des icônes */
+    .social-links {
+        margin-bottom: 0; 
+        order: 2; 
+    }
+
+    /* Bloc du copyright */
+    .copyright {
+        order: 1; 
+    }
+}

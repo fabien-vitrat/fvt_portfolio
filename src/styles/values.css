@@ -1,0 +1,176 @@
+/* --- Section "Valeurs" --- */
+
+
+/* Conteneur principal de la section */
+.valeurs {
+    height: 100vh; 
+    display: flex;
+    flex-direction: column; 
+    justify-content: space-evenly; 
+}
+
+/* Limite la largeur des blocs sur les petits écrans */
+.valeurs .valeur,
+.valeurs .description {
+    max-width: 90%;
+}
+/* Empêche le titre (ex: "TRAVAIL D'EQUIPE") de se couper en two lignes */
+.valeurs .valeur h2 {
+    white-space: nowrap;
+}
+/* Ajoute un espace vertical entre les rangées (gauche/droite) */
+.valeurs .gauche,
+.valeurs .droite {
+    margin: 50px 0;
+}
+/* Supprime la marge de la dernière rangée */
+.valeurs .derniere {
+    margin: 0;
+}
+    
+    
+/* --- Structure de la Frise (Desktop) --- */
+.valeurs .all {
+    display: contents;
+}
+
+/* Alignement pour les rangées de GAUCHE */
+.valeurs .gauche .valeur{
+    display: flex;
+    justify-content: flex-end; 
+    align-items: stretch;
+}
+/* Alignement pour les rangées de DROITE */
+.valeurs .droite .valeur{
+    display: flex;
+    justify-content: flex-start; 
+    align-items: stretch;
+}
+/* Alignement pour les rangées de GAUCHE */
+.valeurs .gauche .description{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+    justify-content: center;
+}
+/* Alignement pour les rangées de DROITE */
+.valeurs .droite .description {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; 
+    justify-content: center;
+}
+
+
+/* Style de la "Pilule" (Titre + Icône) */
+.valeurs .valeur .fond{
+    padding: 15px 30px;
+    border-radius: 50px; 
+    display: flex;
+    align-items: center;
+    box-shadow: 0 0 20em -10px; /* Ombre douce */
+}
+/* Style de l'icône dans la pilule */
+.valeurs .valeur .fond i {
+    border-radius: 50px;
+    padding-right: 10px;
+    font-size: 20px;
+    padding-top: 2px;
+}
+/* Style du titre (H2) dans la pilule */
+.valeurs .valeur .fond h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: bolder;
+}
+/* Style du texte de description */
+.valeurs .description p{
+    margin: 0;
+    padding: 0;
+}
+
+
+/* --- Bloc de Citation (semble être un style séparé) --- */
+.citation {
+    border-radius: 5px;
+    width: 36rem;
+    padding: 10px;
+    box-shadow: 0 0 20em -30px;
+    margin: 0 auto; 
+}
+.citation p {
+    margin: 0;
+}
+.citation .auteur {
+    font-style: italic;
+    text-align: end; 
+}
+
+
+/* --- RESPONSIVE (Mobile) --- */
+@media (max-width: 992px) {
+    .valeurs {
+        height: auto;
+        padding: 80px 10px;
+    }
+}
+
+@media (max-width: 767px) {
+    /* Réduit les marges verticales sur mobile */
+    .valeurs .gauche,
+    .valeurs .droite {
+        margin: 0px 0;
+    }
+    .valeurs .derniere {
+        margin: 0;
+    }
+    
+    /* Réduit la taille de la police du titre */
+    .valeurs .valeur .fond h2 {
+        font-size: 1.3rem;
+    }
+    .valeurs .valeur .fond i {
+        font-size: 20px;
+    }
+
+
+    /* --- Layout Mobile (Tout centré) --- */
+
+    /* Rangée de GAUCHE : s'empile verticalement (Icone -> Texte) */
+    .valeurs .gauche {
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+    }
+    .valeurs .gauche .valeur {
+        display: flex;
+        justify-content: center;
+        margin: 0 0 7px 0; 
+    }
+    .valeurs .gauche .description {
+        display: flex;
+        align-items: center; 
+    }
+    
+    /* Rangée de DROITE : s'empile verticalement (Icone -> Texte) */
+    .valeurs .droite {
+        display: flex;
+        flex-direction: column-reverse; 
+        align-items: center; 
+    }
+    .valeurs .droite .valeur {
+        display: flex;
+        justify-content: center;
+        margin: 0 0 7px 0;
+    }
+    .valeurs .droite .description {
+        display: flex;
+        align-items: center; 
+    }
+
+    /* Citation sur mobile */
+    .citation {
+        width: 20rem; 
+        text-align: center;
+    }
+}

@@ -1,0 +1,109 @@
+/* --- STYLES --- */
+
+
+/* --- Imports de Polices --- */
+/* Importe la police 'Jost' de Google Fonts (utilisée pour les textes) */
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+/* Importe la police 'IM Fell English SC' (semble non utilisée dans ce code) */
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap');
+
+
+/* --- Conteneur Principal du Titre de Section --- */
+.section-title{
+  text-align: center;
+  margin: 0px; 
+  text-transform: uppercase; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  height: 80px; 
+}
+
+/* Titre de Premier Plan (ex: "PORTFOLIO") */
+.section-title h2 {
+  font-weight: 700; 
+  color: var(--ff-jost); 
+  margin: 0px;
+  position: absolute; 
+}
+
+/* Titre d'Arrière-Plan (ex: "FABIEN VITRAT") */
+.section-title h1{
+  color: var(--back); 
+  font-family: var(--ff-jockey); 
+  font-weight: bold;
+  margin: 0px;
+}
+
+
+/* --- RESPONSIVE --- */
+
+/* S'applique aux écrans PETITS (jusqu'à 768px) */
+@media (max-width: 768px) {
+  /* (Ce style .container est global, pas spécifique au .section-title) */
+  .container {
+    max-width: 540px; 
+    width: 100%;
+    margin-inline: auto; 
+  }
+
+  /* Titre de premier plan (H2) sur mobile */
+  .section-title h2 {
+    font-size: 9vw; 
+  }
+
+  /* Titre d'arrière-plan (H1) sur mobile */
+  .section-title h1{
+    font-size: 13vw; 
+    position: absolute; 
+    white-space: nowrap; 
+  }
+}
+
+/* S'applique aux écrans MOYENS (Tablettes) */
+@media (min-width: 768px) {
+  .container { max-width: 720px; width: 100%; margin-inline: auto;}
+  
+  .section-title h2 {
+    font-size: 5vw; 
+  }
+  .section-title h1{
+    font-size: 9vw;
+  }
+}
+
+/* S'applique aux écrans LARGES (Petits desktops) */
+@media (min-width: 992px) {
+  .container { max-width: 960px; }
+
+  .section-title h2 {
+    font-size: 3vw;
+  }
+  .section-title h1{
+    font-size: 6.5vw;
+  }
+}
+ 
+/* S'applique aux écrans TRÈS LARGES (Desktops) */ 
+@media (min-width: 1200px) {
+  .container { max-width: 1140px; }
+
+  .section-title h2 {
+    font-size: 2.8vw;
+  }
+  .section-title h1{
+    font-size: 7vw;
+  }
+}
+
+/* S'applique aux écrans EXTRA LARGES (Grands desktops) */
+@media (min-width: 1400px) {
+  .container { max-width: 1320px; }
+
+  .section-title h2 {
+    font-size: 2.5vw;
+  }
+  .section-title h1{
+    font-size: 5vw; 
+  }
+}

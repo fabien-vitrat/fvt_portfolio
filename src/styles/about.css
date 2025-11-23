@@ -1,0 +1,169 @@
+/* --- Section "À Propos" --- */
+
+/* Conteneur principal de la section "À Propos" */
+.about {
+    display: flex;         
+    align-items: center;   
+    height: 100vh;         
+}
+
+/* Conteneur de la ligne (qui tient les 2 colonnes : image + texte) */
+.about .row {
+    display: flex;
+    flex-direction: row-reverse;
+    width: 100%;
+    align-items: center; 
+}
+
+/* --- Colonne de l'image (pour Desktop) --- */
+.about .img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.about .img img {
+    border-radius: 20px; 
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    transition: all 0.3s ease; 
+}
+.about .img img:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 25px 50px rgba(0,0,0,0.15); 
+}
+
+/* --- Colonne de contenu (pour le Texte) --- */
+.about .content {
+    display: flex;
+    flex-direction: column; 
+    justify-content: space-evenly; 
+    gap: 1.5rem; 
+}
+
+/* Paragraphe de description */
+.about .content p {
+    text-align: justify; 
+    margin: 20px 0; 
+    line-height: 1.6; 
+    color: #4b5563; 
+}
+
+/* Conteneur pour les 2 listes d'informations */
+.about .content .info {
+    display: flex;
+    padding: 0px;
+}          
+/* Items (<li>) des listes */
+.about .content .info li {
+    list-style: none; 
+    margin: 8px 10px;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.1); 
+    transition: all 0.3s ease;
+}
+.about .content .info li:hover {
+    color: #2563eb; 
+    border-bottom-color: #2563eb; 
+}
+/* Supprime la bordure du dernier élément de la liste */
+.about .content .info li:last-child {
+    border-bottom: none;
+}
+/* Style pour les labels (ex: "Email :") */
+.about .content .info li strong {
+    color: #1f2937; 
+}
+   
+/* Conteneur des pastilles "passions" */
+.about .passions {
+    display: flex;
+    justify-content: center; 
+    flex-wrap: wrap; 
+    gap: 10px; 
+    margin-top: 20px;
+}
+/* Style des pastilles "passions" */
+.about .passions p {
+    margin: 0; 
+    border-radius: 25px;
+    background: #2563eb; 
+    color: white;
+    padding: 8px 16px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3); 
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.about .passions p:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+}
+
+
+/* --- Responsive (Tablettes et en dessous) --- */
+@media (max-width: 992px) {
+    /* La section prend la hauteur de son contenu */
+    .about {
+        height: auto; 
+        padding: 80px 10px; 
+    }
+    /* Les colonnes s'empilent verticalement */
+    .about .row {
+        flex-direction: column; 
+    }
+    .about .content {
+        display: contents;
+    }
+    .about .content .info {
+        display: flex;
+        margin-bottom: 15px; 
+    }
+    .about .content .info .col-lg-6 {
+        padding: 0; 
+    }
+    .about .content .info .col-lg-6 ul {
+        margin-bottom: 0;
+    }
+    .about .content .info li {
+        margin: 2px 10px;
+        font-size: 0.9rem;
+    }
+    .about .content .passions {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .about .content .passions p {
+        font-size: 0.8rem; 
+    }
+}
+
+
+/* --- GESTION DU PORTRAIT MOBILE --- */
+
+/* Par défaut, on cache le portrait mobile (qui est dans le HTML) */
+.portrait-mobile {
+    display: none;
+    justify-content: center;
+    margin: 20px 0; 
+}
+.portrait-mobile img {
+    border-radius: 15px;
+    width: 80%; 
+    height: 350px;           
+    object-fit: cover; 
+    object-position: top; 
+    display: block;
+    margin: 0 auto;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+/* En mobile (sous 992px), on cache la version desktop (.img) */
+@media (max-width: 992px) {
+    .about .img {
+        display: none; 
+    }
+    /* ...et on affiche la version mobile */
+    .portrait-mobile {
+        display: flex; 
+    }
+}

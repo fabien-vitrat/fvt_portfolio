@@ -1,0 +1,186 @@
+/* --- Section "Portfolio" --- */
+
+
+/* --- CONTENEUR PRINCIPAL --- */
+.portfolio {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh; 
+    padding: 80px 10px; 
+    overflow: hidden; 
+}
+
+/* Le conteneur "flex" principal qui tient toutes les cartes */
+.portfolio-container {
+    display: flex;
+    width: 100%;
+    height: 70vh; 
+    margin-top: 40px; 
+    gap: 1rem; 
+}
+
+/* Style de base pour TOUTES les cartes */
+.project-card {
+    position: relative; 
+    border-radius: 20px;
+    overflow: hidden; 
+    cursor: pointer;
+    background-size: cover; 
+    background-position: center;
+    transition: flex-grow 0.7s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05); 
+}
+
+/* Overlay sombre (toujours visible) */
+.project-overlay {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2); 
+    transition: background 0.5s ease; 
+}
+
+/* --- 1. ÉTAT INACTIF (Languette) --- */
+.project-card.inactive {
+    flex-grow: 1; 
+}
+.project-card.inactive:hover .project-overlay {
+    background: rgba(0, 0, 0, 0.4); 
+}
+
+/* Style du texte vertical (pour les cartes INACTIVES) */
+.vertical-text {
+    position: absolute;
+    right: 3.5rem; 
+    bottom: 1rem; 
+    transform: rotate(90deg);
+    transform-origin: 100% 100%;
+    color: #fff;
+    font-family: var(--ff-jockey); 
+    font-weight: bold; 
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    white-space: nowrap;
+    letter-spacing: 1.5px;
+    text-shadow: 0 0 10px rgba(0,0,0,0.7); 
+    opacity: 1; 
+    transition: opacity 0.5s ease;
+}
+
+
+/* --- 2. ÉTAT ACTIF (Carré/Agrandie) --- */
+.project-card.active {
+    flex-grow: 5; 
+}
+/* Cache le texte vertical quand la carte est active */
+.project-card.active .vertical-text {
+    opacity: 0;
+}
+
+/* Fiche d'info (pour les cartes ACTIVES) */
+.card-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.7) 50%, transparent 100%);
+    padding: 1.5rem;
+    color: #fff;
+    opacity: 0; 
+    animation: fadeInContent 0.5s ease 0.3s forwards;
+}
+
+/* Animation d'apparition pour la fiche d'info */
+@keyframes fadeInContent {
+    from { opacity: 0; transform: translateY(20px); } 
+    to { opacity: 1; transform: translateY(0); } 
+}
+
+/* Style du texte dans la fiche d'info */
+.card-content h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #fff;
+}
+.card-content p {
+    font-size: 0.9rem;
+    color: #eee;
+    margin-bottom: 1.5rem;
+    max-width: 90%;
+}
+
+/* --- 3. LIENS (style "pastilles") --- */
+.project-links {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 10px;
+}
+.project-links a {
+    background: #2563eb;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3); 
+    transition: all 0.3s ease;
+}
+.project-links a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+}
+
+
+/* --- 4. RESPONSIVE (Mobile) --- */
+@media (max-width: 992px) {
+    .portfolio {
+        height: auto;
+        padding: 80px 10px;
+    }
+}
+
+@media (max-width: 992px) {
+    /* Les cartes s'empilent verticalement */
+    .portfolio-container {
+        flex-direction: column;
+        height: auto; 
+    }
+    
+    /* Hauteur fixe pour la "languette" inactive sur mobile */
+    .project-card.inactive {
+        flex-grow: 1; 
+        height: 80px;
+    }
+    /* Hauteur fixe pour la carte active sur mobile */
+    .project-card.active {
+        flex-grow: 1;
+        height: 400px;
+    }
+    
+    /* Style du texte vertical sur mobile */
+    .vertical-text {
+        transform: none; 
+        position: relative; 
+        bottom: auto;
+        left: auto;
+        right: auto;
+        padding: 1.5rem;
+        font-size: 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center; 
+        width: 100%;
+        height: 100%;
+        text-shadow: 0 0 5px rgba(0,0,0,0.5);
+    }
+
+    .card-content {
+        padding: 1.5rem;
+    }
+}

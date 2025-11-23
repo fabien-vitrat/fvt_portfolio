@@ -1,0 +1,123 @@
+/* --- Section "Accueil" --- */
+
+
+/* --- CONTENEUR PRINCIPAL --- */
+.accueil {
+    position: relative; 
+    height: 100vh; 
+    
+    /* Image de fond */
+    background-image: url('https://cdn.pixabay.com/photo/2020/07/23/06/52/cars-5430503_1280.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    
+    /* Centrage du contenu avec Flexbox */
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    text-align: center;
+    
+    overflow: hidden; 
+}
+
+/* Overlay sombre semi-transparent sur l'image de fond */
+.accueil::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.75); 
+    z-index: 0; 
+}
+
+
+/* --- CONTENU (Texte) --- */
+
+/* Conteneur pour le texte (H1 et P) */
+.accueil .content {
+    position: relative; 
+    z-index: 1; 
+}
+
+/* Titre principal (H1) */
+.accueil .content h1 {
+    font-size: 10rem; 
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #fff;
+    overflow-wrap: break-word; 
+}
+
+/* Sous-titre (P) */
+.accueil .content p {
+    color: #fff;
+    font-size: 1.5rem; 
+    overflow-wrap: break-word;
+}
+
+
+/* --- FLÈCHE DE SCROLL --- */
+
+/* Flèche animée en bas de page */
+.accueil .arrow-down {
+    position: absolute;
+    bottom: 20px; 
+    font-size: 3rem;
+    color: #fff;
+    animation: bounce 2s infinite; 
+    z-index: 1; 
+}
+
+/* Animation de "rebond" pour la flèche */
+@keyframes bounce {
+    /* Début et fin de l'animation : position normale */
+    0%, 100% { 
+        transform: translateY(0); 
+    }
+    /* Milieu de l'animation : 15px plus bas */
+    50% { 
+        transform: translateY(15px); 
+    }
+}
+
+
+/* --- RESPONSIVE --- */
+
+/* Petits laptops */
+@media (max-width: 1400px) {
+    .accueil .content h1 {
+        font-size: 7rem; 
+    }
+}
+
+/* Tablettes (Paysage) - Règle identique à 1400px */
+@media (max-width: 1024px) {
+    .accueil .content h1 {
+        font-size: 7rem; 
+    }
+}
+
+/* Breakpoint personnalisé */
+@media (max-width: 999px) {
+    .accueil .content h1 {
+        font-size: 5rem; 
+    }
+}
+
+/* Tablettes (Portrait) */
+@media (max-width: 768px) {
+    .accueil .content h1 {
+        font-size: 4rem;
+    }
+}
+
+/* Smartphones */
+@media (max-width: 480px) {
+    .accueil .content h1 {
+        font-size: 3rem;
+    }
+    .accueil .content p {
+        font-size: 1.2rem;
+    }
+}
