@@ -1,36 +1,52 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio Personnel - Fabien VITRAT
 
-## Getting Started
+Bienvenue sur le code source de mon portfolio personnel.
+Ce site vitrine interactif présente mon parcours, mes compétences et mes projets.
 
-First, run the development server:
+**Lien :** [MON PORTFOLIO](https://fabien-vitrat-portfolio.vercel.app/)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Technologies Utilisées
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Ce projet est construit avec une stack moderne :
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+* **Framework :** [Next.js](https://nextjs.org/) (App Router)
+* **Langage :** [TypeScript](https://www.typescriptlang.org/)
+* **Animations :** [Framer Motion](https://www.framer.com/motion/) (Transitions, Scroll-spy, Effets de survol)
+* **Styles :** CSS3 Moderne (Flexbox, Grid, Variables CSS, Media Queries)
+* **Icônes :** [FontAwesome](https://fontawesome.com/) & [React Icons](https://react-icons.github.io/react-icons/)
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## Fonctionnalités Clés
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 1. Internationalisation Personnalisée
+Le site est entièrement traduit en **Français**, **Anglais** et **Espagnol**.
+* Système géré via l'API `Context` de React (`LanguageContext`).
+* Changement de langue instantané sans rechargement de page.
+* Traductions centralisées dans des fichiers séparés (`src/translations/`).
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 2. Navigation & Scroll Spy
+* Barre de navigation fixe qui détecte automatiquement la section visible à l'écran.
+* Menu "Hamburger" animé en plein écran pour les appareils mobiles.
+* Défilement doux (smooth scroll) entre les sections.
 
-## Deploy on Vercel
+### 3. Composants Interactifs Uniques
+* **Portfolio "Expanding Cards" :** Une galerie de projets interactive où les cartes s'agrandissent au clic (réalisé en pur CSS/React sans librairie lourde).
+* **Timeline du Parcours :** Une frise chronologique verticale animée retraçant mon expérience académique et professionnelle.
+* **Grille de Compétences :** Logos interactifs avec tooltips personnalisés.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 4. Design & UI/UX
+* **100% Responsive :** Adapté aux mobiles, tablettes et grands écrans.
+* **Thème Soigné :** Design épuré, ombres douces ("flottantes") et typographie moderne (Jost & Jockey One).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## Me Contacter
+
+N'hésitez pas à me contacter pour toute opportunité ou question :
+
+* **Email :** [fabien.vitrat@estaca.eu](mailto:fabien.vitrat@estaca.eu)
+* **LinkedIn :** [Fabien VITRAT](https://www.linkedin.com/in/fabien-vitrat-9763b5261/)
+* **GitHub :** [@fabien-vitrat](https://github.com/fabien-vitrat)
