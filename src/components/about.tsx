@@ -87,7 +87,7 @@ export default function About() {
                                         <strong>{t.about_info_dob}</strong> <span>{t.about_info_dob_val}</span>
                                     </motion.li>
                                     <motion.li whileHover={{ x: 5 }}>
-                                        <strong>{t.about_info_email}</strong> <span>vitratfabien@gmail.com</span>
+                                        <strong>{t.about_info_email}</strong> <span>fabien.vitrat@estaca.eu</span>
                                     </motion.li>
                                     <motion.li whileHover={{ x: 5 }}>
                                         <strong>{t.about_info_phone}</strong> <span>+33 7 66 18 07 15</span>

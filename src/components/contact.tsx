@@ -25,10 +25,10 @@ export default function Contact() {
     // 2. --- APPLICATION DU TYPE ---
     // On dit à TypeScript que 'contactInfo' est un tableau de 'ContactItem'
     const contactInfo: ContactItem[] = [
-        { id: 'contact-1', label: t.contact_email, value: 'vitratfabien@gmail.com', href: 'mailto:vitratfabien@gmail.com' },
-        { id: 'contact-2', label: t.contact_linkedin, value: 'Fabien VITRAT', href: 'https://linkedin.com/in/fabien-vitrat' }, 
-        { id: 'contact-3', label: t.contact_github, value: 'Fabien VITRAT', href: 'https://github.com/FabienVitrat' }, 
-        { id: 'contact-4', label: t.contact_city, value: t.contact_city_val, href: null }, 
+        { id: 'contact-1', label: t.contact_email, value: 'fabien.vitrat@estaca.eu', href: 'mailto:fabien.vitrat@estaca.eu' },
+        { id: 'contact-2', label: t.contact_linkedin, value: 'Fabien VITRAT', href: 'https://www.linkedin.com/in/fabien-vitrat-9763b5261/' }, 
+        { id: 'contact-3', label: t.contact_github, value: 'Fabien VITRAT', href: 'https://github.com/fabien-vitrat' }, 
+        { id: 'contact-4', label: t.contact_city, value: t.contact_city_val, href: 'https://maps.app.goo.gl/LDsr35HCAjNHEwxa7' }, 
     ];
 
     // --- DÉFINITION DES ANIMATIONS ---
