@@ -160,15 +160,15 @@ export const es = {
 
     // Tarjetas de Objetivos
     goals_card_studies_title: 'ESTUDIOS',
-    goals_card_studies_1: 'Ingresar a una clase preparatoria científica',
-    goals_card_studies_2: 'Realizar el concurso de las grandes escuelas de ingeniería',
+    goals_card_studies_1: 'Tener éxito en mis estudios en la ESTACA',
+    goals_card_studies_2: 'Trabajar en proyectos internacionales',
 
     goals_card_engineer_title: 'INGENIERO',
     goals_card_engineer_1: 'Contribuir con soluciones innovadoras',
     goals_card_engineer_2: 'Obtener un título de ingeniero',
 
     goals_card_passions_title: 'PASIONES',
-    goals_card_passions_1: 'Videojuegos, deporte, fotografía y viajes',
+    goals_card_passions_1: 'Automovil, deporte, fotografía y viajes',
     goals_card_passions_2: 'Aprender cosas nuevas y realizarme',
 
     goals_card_experiences_title: 'EXPERIENCIAS',

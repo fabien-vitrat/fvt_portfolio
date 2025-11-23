@@ -160,15 +160,15 @@ export const fr = {
     
     // Cartes Objectifs
     goals_card_studies_title: 'ÉTUDES',
-    goals_card_studies_1: 'Intégrer une classe préparatoire scientifique',
-    goals_card_studies_2: 'Réaliser le concours des grandes écoles d\'ingénieurs',
+    goals_card_studies_1: 'Réussir mes études à l\'ESTACA',
+    goals_card_studies_2: 'Travailler sur des projets internationaux',
 
     goals_card_engineer_title: 'INGÉNIEUR',
     goals_card_engineer_1: 'Contribuer des solutions innovantes',
     goals_card_engineer_2: 'Obtenir un diplôme d\'ingénieur',
 
     goals_card_passions_title: 'PASSIONS',
-    goals_card_passions_1: 'Jeux vidéo, sport, photographie et voyages',
+    goals_card_passions_1: 'Automobile, sport, photographie et voyages',
     goals_card_passions_2: 'Apprendre de nouvelles choses et m\'épanouir',
 
     goals_card_experiences_title: 'EXPÉRIENCES',

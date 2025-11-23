@@ -160,15 +160,15 @@ export const en = {
 
     // Goal Cards
     goals_card_studies_title: 'STUDIES',
-    goals_card_studies_1: 'Enter a scientific preparatory class',
-    goals_card_studies_2: 'Take the competitive exams for top engineering schools',
+    goals_card_studies_1: 'Succeed in my studies at ESTACA',
+    goals_card_studies_2: 'Work on international projects',
 
     goals_card_engineer_title: 'ENGINEER',
     goals_card_engineer_1: 'Contribute innovative solutions',
     goals_card_engineer_2: 'Obtain an engineering degree',
 
     goals_card_passions_title: 'PASSIONS',
-    goals_card_passions_1: 'Video games, sports, photography, and travel',
+    goals_card_passions_1: 'Automobile, sports, photography, and travel',
     goals_card_passions_2: 'Learn new things and grow',
 
     goals_card_experiences_title: 'EXPERIENCES',

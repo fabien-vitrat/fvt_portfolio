@@ -23,6 +23,7 @@ import AppWrapper from "../components/appWrapper";
 import { LanguageProvider } from "@/src/context/LanguageContext"; 
 // 2. IMPORTE TA NAVIGATION
 import Navigation from "@/src/components/navigation";
+import { i } from "framer-motion/client";
 
 
 const geistSans = Geist({
@@ -51,6 +52,7 @@ export default function RootLayout({
       <head>
         <meta charSet="utf-8" />
         <title>Fabien VITRAT</title>
+        <link rel="icon" type="image/x-icon" href="../app/favicon.jpeg" />
         <link
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
