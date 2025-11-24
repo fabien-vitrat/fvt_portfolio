@@ -48,29 +48,20 @@ export default function About() {
             <div className="container">
                 <div className="row">
                     
-                    <motion.div 
+                    <div 
                         className="col-md-8 col-sm-12 content"
-                        variants={containerVariants}
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true }}
                     >
-                        <motion.div 
+                        <div 
                             className="section-title"
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
                         >
                             <h1>Fabien VITRAT</h1>
                             <h2>{t.about_title}</h2>
-                        </motion.div>
+                        </div>
                         
-                        <motion.div className="row info" variants={itemVariants}>
+                        <div className="row info" >
                             
                             <div className="portrait-mobile">
-                                <motion.div
-                                    whileHover={{ scale: 1.05 }}
-                                    transition={{ duration: 0.3 }}
+                                <div
                                 >
                                     <Image 
                                         src={Portrait} 
@@ -78,73 +69,63 @@ export default function About() {
                                         className='img-fluid'
                                         priority
                                     />
-                                </motion.div>
+                                </div>
                             </div>
 
                             <div className="col-lg-6">
                                 <ul>
-                                    <motion.li whileHover={{ x: 5 }}>
+                                    <li>
                                         <strong>{t.about_info_dob}</strong> <span>{t.about_info_dob_val}</span>
-                                    </motion.li>
-                                    <motion.li whileHover={{ x: 5 }}>
+                                    </li>
+                                    <li>
                                         <strong>{t.about_info_email}</strong> <span>fabien.vitrat@estaca.eu</span>
-                                    </motion.li>
-                                    <motion.li whileHover={{ x: 5 }}>
+                                    </li>
+                                    <li>
                                         <strong>{t.about_info_phone}</strong> <span>+33 7 66 18 07 15</span>
-                                    </motion.li>
-                                    <motion.li whileHover={{ x: 5 }}>
+                                    </li>
+                                    <li>
                                         <strong>{t.about_info_city}</strong> <span>{t.about_info_city_val}</span>
-                                    </motion.li>
+                                    </li>
                                 </ul>
                             </div>
                                                         
                             <div className="col-lg-6">
                                 <ul>
-                                    <motion.li whileHover={{ x: 5 }}>
+                                    <li>
                                         <strong>{t.about_info_age}</strong> <span>{t.about_info_age_val}</span>
-                                    </motion.li>
-                                    <motion.li whileHover={{ x: 5 }}>
+                                    </li>
+                                    <li>
                                         <strong>{t.about_info_school}</strong> <span>{t.about_info_school_val}</span>
-                                    </motion.li>
-                                    <motion.li whileHover={{ x: 5 }}>
+                                    </li>
+                                    <li>
                                         <strong>{t.about_info_level}</strong> <span>{t.about_info_level_val}</span>
-                                    </motion.li>
-                                    <motion.li whileHover={{ x: 5 }}>
+                                    </li>
+                                    <li>
                                         <strong>{t.about_info_langs}</strong> <span>{t.about_info_langs_val}</span>
-                                    </motion.li>
+                                    </li>
                                 </ul>
                             </div>
-                        </motion.div>
+                        </div>
                         
-                        <motion.div variants={itemVariants}>
+                        <div>
                             <p>{t.about_desc}</p>
-                        </motion.div>
+                        </div>
                         
-                        <motion.div className='passions' variants={itemVariants}>
+                        <div className='passions' >
                             {passions.map((passion, index) => (
-                                <motion.p
+                                <p
                                     key={passion} 
-                                    whileHover={{ scale: 1.1, y: -2 }}
-                                    initial={{ opacity: 0, y: 20 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    transition={{ delay: index * 0.1 }}
                                 >
                                     {passion}
-                                </motion.p>
+                                </p>
                             ))}
-                        </motion.div>
-                    </motion.div>
+                        </div>
+                    </div>
                     
-                    <motion.div 
+                    <div 
                         className="col-md-4 col-sm-12 img"
-                        initial={{ opacity: 0, x: 50 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.8 }}
                     >
-                        <motion.div
-                            whileHover={{ scale: 1.05, rotate: 2 }}
-                            transition={{ duration: 0.3 }}
+                        <div
                         >
                             <Image
                                 src={Portrait}
@@ -152,8 +133,8 @@ export default function About() {
                                 className='img-fluid'
                                 priority
                             />
-                        </motion.div>
-                    </motion.div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>

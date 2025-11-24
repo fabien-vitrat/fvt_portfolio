@@ -72,7 +72,7 @@ export const es = {
     course_experiences: [
         {
             Ecole: "ESTACA",
-            Diplome: "Ingeniero de Transporte",
+            Diplome: "Estudiante de Ingeniería del Transporte",
             Dates: "2025 - 2030",
             Mention: "En curso...",
             Icon: "fa-solid fa-school",

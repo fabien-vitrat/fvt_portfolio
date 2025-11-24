@@ -107,3 +107,130 @@
     font-size: 5vw; 
   }
 }
+
+
+
+
+/* --- État initial pour les éléments qui doivent apparaître --- */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+  will-change: opacity, transform;
+}
+
+/* --- État activé quand visible --- */
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- Animation spécifique pour l'image desktop (vient de la droite) --- */
+.reveal-right {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+}
+
+.reveal-right.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* --- Effets de survol (Hovers) --- */
+.hover-scale {
+  transition: transform 0.3s ease;
+  display: inline-block; /* Important pour le transform */
+}
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+.hover-rotate:hover {
+  transform: scale(1.05) rotate(2deg);
+}
+
+.hover-slide-right {
+  transition: transform 0.3s ease;
+  display: block;
+}
+.hover-slide-right:hover {
+  transform: translateX(5px);
+}
+
+.passion-item {
+  transition: transform 0.3s ease;
+  display: inline-block;
+}
+.passion-item:hover {
+  transform: scale(1.1) translateY(-2px);
+}
+
+/* --- ANIMATIONS GÉNÉRALES --- */
+
+/* Animation du Titre (Glissement vers le haut) */
+.reveal-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s cubic-bezier(0.5, 0, 0, 1);
+}
+.reveal-up.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Animation des Compétences (Effet Pop/Rebond) */
+.skill-pop {
+  opacity: 0;
+  transform: scale(0.8) translateY(20px);
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.skill-pop.active {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+/* --- LOGIQUE DES SKILLS & TOOLTIPS --- */
+
+.skillBox {
+  position: relative; /* Nécessaire pour positionner le tooltip en absolute par rapport à la boite */
+  cursor: pointer;
+  z-index: 1; /* Niveau par défaut */
+  transition: z-index 0s linear 0.1s; 
+}
+
+.skillBox:hover,
+.skillBox.active-z {
+  z-index: 1000;
+  transition-delay: 0s; /* Application immédiate du z-index */
+}
+
+.skillTooltip {
+  position: absolute;
+  bottom: 80%; /* Place le texte au-dessus de l'image */
+  left: 50%;
+  transform: translateX(-50%) translateY(10px); /* Position de départ légèrement plus bas */
+  
+  /* Apparence du tooltip */
+  background-color: #333;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  white-space: nowrap;
+  pointer-events: none; /* Empêche le tooltip de bloquer la souris */
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+
+  /* Animation d'apparition */
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease-in-out;
+}
+
+/* État visible du tooltip */
+.skillTooltip.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0); /* Remonte à sa place finale */
+}
